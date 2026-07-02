@@ -63,6 +63,8 @@ def convert():
                 m = re.search(r'\(([A-Za-z]+)\)', b)
                 if m:
                     answer = m.group(1).upper()
+                    # Remove the answer parentheses from the question text
+                    b = b.replace(m.group(0), "")
 
             answer = answer.upper().strip()
             if answer == 'T':
