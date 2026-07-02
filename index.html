@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>暖通空调刷题</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>暖通空调刷题</h1>
+      <p class="subtitle">高级工题库练习</p>
+    </header>
+
+    <div class="filter-bar">
+      <div class="filter-group">
+        <span class="filter-label">题型</span>
+        <div class="segmented-control">
+          <button class="seg-btn active" data-type="all" onclick="window.setTypeFilter('all')">全部</button>
+          <button class="seg-btn" data-type="单选题" onclick="window.setTypeFilter('单选题')">单选</button>
+          <button class="seg-btn" data-type="多选题" onclick="window.setTypeFilter('多选题')">多选</button>
+          <button class="seg-btn" data-type="判断题" onclick="window.setTypeFilter('判断题')">判断</button>
+        </div>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">错误</span>
+        <select class="filter-select" onchange="window.setErrorFilter(this.value)">
+          <option value="all">全部题目</option>
+          <option value="wrong-only">只做过错的</option>
+          <option value="ge1">错 1 次以上</option>
+          <option value="ge2">错 2 次以上</option>
+          <option value="ge3">错 3 次以上</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="stats-bar" id="statsBar"></div>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <div id="questionContainer">
+      <div class="empty-state">
+        <div class="empty-icon">&#9203;</div>
+        <p>加载题目数据中...</p>
+      </div>
+    </div>
+
+    <div class="nav-bar" id="navBar"></div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
