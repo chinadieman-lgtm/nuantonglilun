@@ -339,6 +339,7 @@ body {
 .option input[type="radio"],
 .option input[type="checkbox"] {
   display: none;
+  pointer-events: none;
 }
 
 .option .option-marker {
